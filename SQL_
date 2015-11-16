@@ -1,0 +1,67 @@
+create table tblEmployee
+(   EmployeeID int primary key identity(1,1),
+    Name varchar(50),
+	Gender varchar(50),
+	City varchar(50),
+	DateOfBirth date
+	
+	);
+
+	drop table tblEmployee
+	
+	
+	insert into tblEmployee (Name, Gender, City)
+	values ('Igor', 'Muško', 'Zagreb'); 
+
+	insert into tblEmployee (Name, Gender, City)
+	values ('Roberto', 'Muško', 'Zagreb');
+
+	insert into tblEmployee (Name, Gender, City)
+	values ('Anamarija', 'Žensko', 'Zagreb');
+
+	select * from tblEmployee where EmployeeID = 1
+
+	-------------------*****************
+	create table tblEmployee
+(   EmployeeID int primary key identity(1,1),
+    Name varchar(50),
+	Gender varchar(50),
+	City varchar(50),
+	DepartmentID int
+	);
+
+
+
+		insert into tblEmployee (Name, Gender, City, DepartmentID)
+	values ('Igor', 'Muško', 'Zagreb', 1); 
+
+	insert into tblEmployee (Name, Gender, City, DepartmentID)
+	values ('Roberto', 'Muško', 'Zagreb', 2);
+
+	insert into tblEmployee (Name, Gender, City , DepartmentID)
+	values ('Anamarija', 'Žensko', 'Zagreb', 3);
+
+
+
+
+
+
+
+
+
+
+
+	---------------------------------
+
+
+	create table tblDepartment
+	(
+	ID int primary key identity(1,1),
+	Name varchar(50)
+	)
+
+
+
+	insert into tblDepartment (Name) values ('IT');
+	insert into tblDepartment (Name) values ('Cleaning');
+	insert into tblDepartment (Name) values ('Adminisration'); 
