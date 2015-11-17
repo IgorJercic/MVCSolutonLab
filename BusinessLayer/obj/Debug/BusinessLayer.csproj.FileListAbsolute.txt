@@ -2,3 +2,8 @@ c:\users\igor\documents\visual studio 2013\Projects\LAB_MvcApplication4XXL busin
 c:\users\igor\documents\visual studio 2013\Projects\LAB_MvcApplication4XXL business example\BusinessLayer\bin\Debug\BusinessLayer.pdb
 c:\users\igor\documents\visual studio 2013\Projects\LAB_MvcApplication4XXL business example\BusinessLayer\obj\Debug\BusinessLayer.dll
 c:\users\igor\documents\visual studio 2013\Projects\LAB_MvcApplication4XXL business example\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Roby\Documents\Visual Studio 2013\Projects\LAB_MvcApplication4XXL business example\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Roby\Documents\Visual Studio 2013\Projects\LAB_MvcApplication4XXL business example\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\Roby\Documents\Visual Studio 2013\Projects\LAB_MvcApplication4XXL business example\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\Roby\Documents\Visual Studio 2013\Projects\LAB_MvcApplication4XXL business example\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Roby\Documents\Visual Studio 2013\Projects\LAB_MvcApplication4XXL business example\BusinessLayer\obj\Debug\BusinessLayer.pdb
