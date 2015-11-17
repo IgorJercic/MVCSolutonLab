@@ -27,7 +27,6 @@ Create table tblDepartment
 )
 
 
-
 Insert into tblDepartment values('IT')
 Insert into tblDepartment values('HR')
 Insert into tblDepartment values('Payroll')
