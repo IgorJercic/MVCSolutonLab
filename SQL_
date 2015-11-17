@@ -1,67 +1,100 @@
-create table tblEmployee
-(   EmployeeID int primary key identity(1,1),
-    Name varchar(50),
-	Gender varchar(50),
-	City varchar(50),
-	DateOfBirth date
-	
-	);
-
-	drop table tblEmployee
-	
-	
-	insert into tblEmployee (Name, Gender, City)
-	values ('Igor', 'Muško', 'Zagreb'); 
-
-	insert into tblEmployee (Name, Gender, City)
-	values ('Roberto', 'Muško', 'Zagreb');
-
-	insert into tblEmployee (Name, Gender, City)
-	values ('Anamarija', 'Žensko', 'Zagreb');
-
-	select * from tblEmployee where EmployeeID = 1
-
-	-------------------*****************
-	create table tblEmployee
-(   EmployeeID int primary key identity(1,1),
-    Name varchar(50),
-	Gender varchar(50),
-	City varchar(50),
-	DepartmentID int
-	);
+Create table tblEmployee
+(
+EmployeeId int primary key identity,
+Name nvarchar(50),
+Gender nvarchar(50),
+City nvarchar(50)
+)
 
 
-
-		insert into tblEmployee (Name, Gender, City, DepartmentID)
-	values ('Igor', 'Muško', 'Zagreb', 1); 
-
-	insert into tblEmployee (Name, Gender, City, DepartmentID)
-	values ('Roberto', 'Muško', 'Zagreb', 2);
-
-	insert into tblEmployee (Name, Gender, City , DepartmentID)
-	values ('Anamarija', 'Žensko', 'Zagreb', 3);
+Insert into tblEmployee values ('Mark', 'Male', 'London')
+Insert into tblEmployee values ('John', 'Male', 'Chennai')
+Insert into tblEmployee values ('Mary', 'Female', 'New York')
+Insert into tblEmployee values ('Mike', 'Male', 'Sydney')
 
 
 
 
+drop table tblEmployee
+drop table tblDepartment
+
+---------------------------------------------------------------
+
+Create table tblDepartment
+(
+ Id int primary key identity,
+ Name nvarchar(50)
+)
+
+
+
+Insert into tblDepartment values('IT')
+Insert into tblDepartment values('HR')
+Insert into tblDepartment values('Payroll')
+
+
+Create table tblEmployee
+(
+ EmployeeId int Primary Key Identity(1,1),
+ Name nvarchar(50),
+ Gender nvarchar(10),
+ City nvarchar(50),
+ DepartmentId int
+)
+
+
+Insert into tblEmployee values('Mark','Male','London',1)
+Insert into tblEmployee values('John','Male','Chennai',3)
+Insert into tblEmployee values('Mary','Female','New York',3)
+Insert into tblEmployee values('Mike','Male','Sydeny',2)
+Insert into tblEmployee values('Scott','Male','London',1)
+Insert into tblEmployee values('Pam','Female','Falls Church',2)
+Insert into tblEmployee values('Todd','Male','Sydney',1)
+Insert into tblEmployee values('Ben','Male','New Delhi',2)
+Insert into tblEmployee values('Sara','Female','London',1)
 
 
 
 
+----------------------------------------------------------
+
+
+Create table tblEmployee
+(
+ Id int Primary Key Identity(1,1),
+ Name nvarchar(50),
+ Gender nvarchar(10),
+ City nvarchar(50),
+ DateOfBirth DateTime
+)
 
 
 
-	---------------------------------
+Insert into tblEmployee values('Mark','Male','London','01/05/1979')
+Insert into tblEmployee values('John','Male','Chennai','03/07/1981')
+Insert into tblEmployee values('Mary','Female','New York','02/04/1978')
+Insert into tblEmployee values('Mike','Male','Sydeny','02/03/1974')
+Insert into tblEmployee values('Scott','Male','London','04/06/1972')
 
 
-	create table tblDepartment
-	(
-	ID int primary key identity(1,1),
-	Name varchar(50)
-	)
+select * from tblEmployee
+
+----procedura
+
+Create procedure spGetAllEmployees
+as
+Begin
+ Select Id, Name, Gender, City, DateOfBirth
+ from tblEmployee
+End
+
+
+--------------------
+exec spGetAllEmployees
+
+
+http://csharp-video-tutorials.blogspot.com/2013/05/part-13-formcollection-in-mvc.html
 
 
 
-	insert into tblDepartment (Name) values ('IT');
-	insert into tblDepartment (Name) values ('Cleaning');
-	insert into tblDepartment (Name) values ('Adminisration'); 
+
