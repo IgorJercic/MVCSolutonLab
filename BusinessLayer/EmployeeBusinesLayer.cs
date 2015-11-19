@@ -42,7 +42,10 @@ namespace BusinessLayer
                         emoloyee.Name = rdr["Name"].ToString();
                         emoloyee.Gender = rdr["Gender"].ToString();
                         emoloyee.City = rdr["City"].ToString();
+                        if (!(rdr["DateOfBirth"] is DBNull))
+                        { 
                         emoloyee.DateOfBirth = Convert.ToDateTime(rdr["DateOfBirth"]);
+                         }
 
                         emp.Add(emoloyee);
                     }
