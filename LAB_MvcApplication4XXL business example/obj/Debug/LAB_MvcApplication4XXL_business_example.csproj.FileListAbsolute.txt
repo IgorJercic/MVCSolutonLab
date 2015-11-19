@@ -19,3 +19,6 @@ c:\users\igor\documents\visual studio 2013\Projects\LAB_MvcApplication4XXL busin
 c:\users\igor\documents\visual studio 2013\Projects\LAB_MvcApplication4XXL business example\LAB_MvcApplication4XXL business example\bin\System.Web.WebPages.Razor.xml
 c:\users\igor\documents\visual studio 2013\Projects\LAB_MvcApplication4XXL business example\LAB_MvcApplication4XXL business example\obj\Debug\LAB_MvcApplication4XXL_business_example.dll
 c:\users\igor\documents\visual studio 2013\Projects\LAB_MvcApplication4XXL business example\LAB_MvcApplication4XXL business example\obj\Debug\LAB_MvcApplication4XXL_business_example.pdb
+C:\Users\Igor\documents\visual studio 2013\Projects\LAB_MvcApplication4XXL business example\LAB_MvcApplication4XXL business example\bin\BusinessLayer.dll
+C:\Users\Igor\documents\visual studio 2013\Projects\LAB_MvcApplication4XXL business example\LAB_MvcApplication4XXL business example\bin\BusinessLayer.pdb
+C:\Users\Igor\documents\visual studio 2013\Projects\LAB_MvcApplication4XXL business example\LAB_MvcApplication4XXL business example\obj\Debug\LAB_MvcApplication4XXL_business_example.csprojResolveAssemblyReference.cache
