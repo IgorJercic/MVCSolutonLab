@@ -49,7 +49,7 @@ namespace LAB_MvcApplication4XXL_business_example.Controllers
             //ako je model prošao validaciju ako to samo ako je u View @Html.ValidationSummary(true)
             {
                 Employee employee = new Employee(); //sva propery su null u ovom trenutkku
-                UpdateModel(employee); //no sada sve što je stavljeno u formu će se bindat s 
+                UpdateModel(employee); //no sada sve što je stavljeno u formu će se bindat s view formom
                 EmployeeBusinesLayer EmployeBuss = new EmployeeBusinesLayer();
                 EmployeBuss.AddEmployee(employee);
 
@@ -65,6 +65,98 @@ namespace LAB_MvcApplication4XXL_business_example.Controllers
 
 
 
+
+
+
+
+
+        [HttpGet]
+       
+        public ActionResult Edit(int id)
+        {
+            EmployeeBusinesLayer emplY = new EmployeeBusinesLayer();
+            Employee employeer = emplY.Employees.Single(ep => ep.ID == id);
+            return View(employeer);
+        }
+
+
+
+
+
+
+
+        [HttpPost]
+        [ActionName("Edit")]
+        public ActionResult Edit_Post(int id)
+        {
+            EmployeeBusinesLayer emp = new EmployeeBusinesLayer();
+            Employee employee = emp.Employees.Single(x => x.ID == id);
+            UpdateModel<IEmployee>(employee); //na ovaj način ćemo update samo ono što je u interface
+
+
+            if (ModelState.IsValid)
+            {
+
+                emp.SaveEmployee(employee);
+                return RedirectToAction("Index");
+            }
+
+
+            return View(employee);
+        }
+
+
+
+
+
+
+
+        #region koristeći samo model
+        //[HttpPost]
+        //[ActionName("Edit")]
+        //public ActionResult Edit_Post(int id)
+        //{
+        //    EmployeeBusinesLayer emp = new EmployeeBusinesLayer();
+        //    Employee employee = emp.Employees.Single(x => x.ID == id);
+        //    UpdateModel(employee, new string[] { "ID", "Gender", "City", "DateOfBirth" });
+
+
+        //    if (ModelState.IsValid)
+        //    {
+               
+        //        emp.SaveEmployee(employee);
+        //        return RedirectToAction("Index");
+        //    }
+
+
+        //    return View(employee);
+        //}
+
+        #endregion
+
+
+
+
+
+
+        #region zbog ovog zapisa se kroz fiddler može hackat aplikacija, jednostavno jer se cjeli objekt Employee kroz klasu mora update i to putem forme (model binding), sve što prolazi kroz post na server će se spremit na server
+        //[HttpPost]
+        //public ActionResult Edit(Employee employee)
+        //{
+           
+
+        //      if(ModelState.IsValid)
+        //      {
+        //          EmployeeBusinesLayer emp = new EmployeeBusinesLayer();
+        //          emp.SaveEmployee(employee);
+        //          return RedirectToAction("Index");
+        //      }
+
+           
+        //      return View(employee);
+        //}
+
+        #endregion
 
 
 
@@ -92,6 +184,22 @@ namespace LAB_MvcApplication4XXL_business_example.Controllers
 
 
         //}
+
+
+
+
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            EmployeeBusinesLayer employ = new EmployeeBusinesLayer();
+            employ.DeleteEmployee(id);
+            return RedirectToAction("Index");
+        }
+
+
+
+
 
 
 

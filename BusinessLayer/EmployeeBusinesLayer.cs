@@ -100,10 +100,81 @@ namespace BusinessLayer
        }
 
 
+       public void SaveEmployee(Employee employee)
+       {
 
-     
+           string connection = "server=.; database=sample2MVC; integrated security=SSPI";
+
+           using (SqlConnection conn = new SqlConnection(connection))
+           {
+
+               SqlCommand com = new SqlCommand("spSaveEmployee", conn);
+               com.CommandType = CommandType.StoredProcedure;
+
+               SqlParameter idEmp = new SqlParameter();
+               idEmp.ParameterName = "@Id";
+               idEmp.Value = employee.ID;
+               com.Parameters.Add(idEmp);
+
+               SqlParameter Name = new SqlParameter();
+               Name.ParameterName = "@Name";
+               Name.Value = employee.Name;
+               com.Parameters.Add(Name);
+
+               SqlParameter Gender = new SqlParameter();
+               Gender.ParameterName = "@Gender";
+               Gender.Value = employee.Gender;
+               com.Parameters.Add(Gender);
 
 
+               SqlParameter DateBirth = new SqlParameter();
+               DateBirth.ParameterName = "@DateOfBirth";
+               DateBirth.Value = employee.DateOfBirth;
+               com.Parameters.Add(DateBirth);
+
+
+               SqlParameter CityP = new SqlParameter();
+               CityP.ParameterName = "@City";
+               CityP.Value = employee.City;
+               com.Parameters.Add(CityP);
+
+               conn.Open();
+               com.ExecuteNonQuery();
+
+
+
+           }
+
+
+
+
+       }
+
+
+          public void DeleteEmployee(int id)
+         {
+             string connection = "server=.; database=sample2MVC; integrated security=SSPI";
+
+              using (SqlConnection conn = new SqlConnection(connection))
+              {
+                  SqlCommand cmd = new SqlCommand("spDeleteEmployee", conn);
+                  cmd.CommandType = CommandType.StoredProcedure;
+
+                  SqlParameter paramID = new SqlParameter();
+                  paramID.ParameterName = "@Id";
+                  paramID.Value = id;
+                  cmd.Parameters.Add(paramID);
+
+                  conn.Open();
+                  cmd.ExecuteNonQuery();
+              }
+
+
+
+
+
+
+         }
   
 
 

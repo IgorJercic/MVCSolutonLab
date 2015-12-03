@@ -10,6 +10,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <meta name="description" content="The description of my page" />
 </head>
 <body>
     <p>
@@ -18,42 +19,70 @@
     <table style="border:outset; color:antiquewhite;">
         <tr>
             <th>
-              o  @Html.DisplayNameFor(model => model.Name)
+                o  @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-              o  @Html.DisplayNameFor(model => model.Gender)
+                o  @Html.DisplayNameFor(model => model.Gender)
             </th>
             <th>
-              o  @Html.DisplayNameFor(model => model.City)
+                o  @Html.DisplayNameFor(model => model.City)
             </th>
             <th>
-               o @Html.DisplayNameFor(model => model.DateOfBirth)
+                o @Html.DisplayNameFor(model => model.DateOfBirth)
             </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gender)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateOfBirth)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-            </td>
-        </tr>
-    }
-    
+
+        @foreach (var item in Model)
+        {
+
+
+            using (Html.BeginForm("Delete", "Employee", new { id = item.ID }))
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfBirth)
+                    </td>
+                    <td>
+
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                        <input type="submit" value="Delete" onclick="return confirm('Si zicer konju @item.Name');"/>
+                       
+
+
+
+
+                        @*@Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
+
+
+                        @*@Html.ActionLink("Details", "Details", new { id = item.ID })*@
+
+
+
+
+
+
+
+
+
+
+
+                    </td>
+
+                </tr>
+            }
+        }
+
     </table>
 </body>
 </html>
